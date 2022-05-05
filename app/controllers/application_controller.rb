@@ -3,6 +3,16 @@ class ApplicationController < ActionController::Base
   # configure_permitted_parametersメソッドが実行されるようになる。
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  # サインイン後にどこに遷移するかを設定しているメソッド(Deviseが用意している)
+  def after_sign_in_path_for(resource)
+    about_path
+  end
+
+  # サインアウト後の遷移先（デフォルトはroot_pathのため今回はコメントアウト）
+  # def after_sign_out_path_for(resource)
+  #   about_path
+  # end
+
   # privateは記述をしたコントローラ内でしか参照できないが、
   # protectedは呼び出された他のコントローラからも参照することが可能。
   protected
