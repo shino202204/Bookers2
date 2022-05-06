@@ -16,7 +16,11 @@
       <td><%= @user.introduction %></td>
     </tbody>
   </table>
-  <span><%= link_to "編集アイコン", edit_user_path(@user.id)%></span>
+  <% if @user == current_user %>
+    <%= link_to "編集アイコン", edit_user_path(@user.id) %>
+  <% else %>
+    <%= link_to "編集アイコン", user_path(current_user.id) %>
+  <% end %>
 
 <h2>New book</h2>
 <% if @book.errors.any? %>
