@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # Active Storageを使って画像を扱えるようにする
-  has_one_attached :image
+  has_one_attached :profile_image
 
   # アソシエーションの設定
   has_many :books, dependent: :destroy
@@ -17,10 +17,10 @@ class User < ApplicationRecord
   # 画像添付がない場合はサンプル画像を表示
   def get_image(width, height)
     # 「unless」：もし〜でなければ → もし画像が添付されていなければ
-    unless image.attached?
+    unless profile_image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')
-      image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
+      profile_image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
     end
-      image.variant(resize_to_limit: [width,height]).processed
+      profile_image.variant(resize_to_limit: [width,height]).processed
   end
 end
