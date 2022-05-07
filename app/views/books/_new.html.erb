@@ -1,3 +1,12 @@
+<% if book.errors.any? %>
+  <%= book.errors.count %> errors prohibited this book from being saved:
+  <ul>
+    <% book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <h2>User info</h2>
   <span><%= image_tag user.get_image(100,100) %></span>
   <table>
@@ -20,15 +29,6 @@
   <% end %>
 
 <h2>New book</h2>
-<% if book.errors.any? %>
-  <%= book.errors.count %> errors prohibited this book from being saved:
-  <ul>
-    <% book.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-
 <%= form_with model: book, url: '/books', method: :post do |f| %>
   <div class="field">
     <label>Title</label>

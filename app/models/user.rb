@@ -10,6 +10,11 @@ class User < ApplicationRecord
   # アソシエーションの設定
   has_many :books, dependent: :destroy
 
+  # バリデーション
+  validates :name, uniqueness: true, length: { in: 2..20 }
+  validates :introduction, length: { maximum: 50 }
+
+  # 画像添付がない場合はサンプル画像を表示
   def get_image(width, height)
     # 「unless」：もし〜でなければ → もし画像が添付されていなければ
     unless image.attached?

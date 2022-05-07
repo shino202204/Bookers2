@@ -13,6 +13,8 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id)
     else
       @books = Book.all
+      @users = User.all
+      @user = User.find(current_user.id)
       render :index
     end
   end
