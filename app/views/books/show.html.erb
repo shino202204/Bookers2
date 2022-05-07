@@ -55,3 +55,5 @@
   </p>
   <%= @book_detail.title %>
   <%= @book_detail.body %>
+  <%= link_to 'Edit', edit_book_path(@book_detail.id) %>
+  <%= link_to 'Destroy', book_path(@book_detail.id), method: :delete, "data-confirm" => "本当に消しますか？" %>

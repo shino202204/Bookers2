@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   # サインイン後にどこに遷移するかを設定しているメソッド(Deviseが用意している)
   def after_sign_in_path_for(resource)
-    about_path
+    "/users/#{current_user.id}"
   end
 
   # サインアウト後の遷移先（デフォルトはroot_pathのため今回はコメントアウト）
