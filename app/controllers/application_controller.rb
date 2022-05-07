@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  # ログイン認証されていなければログイン画面へリダイレクトする。
+  before_action :authenticate_user!, except: [:top, :about]
+
   # devise利用の機能（ユーザ登録、ログイン認証など）が使われる前に
   # configure_permitted_parametersメソッドが実行されるようになる。
   before_action :configure_permitted_parameters, if: :devise_controller?
