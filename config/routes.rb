@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # get 'books/edit'
   # 上記を以下の通り変更
   # onlyオプション：生成するルーティングを限定。不要なルーティングを実行しないようにする。
-  resources :books, only:[:index, :show, :edit, :create, :destroy]
+  resources :books, only:[:index, :show, :edit, :create, :destroy, :update]
   resources :users, only:[:index, :show, :edit, :update]
 
   get 'homes/about', as: 'about'
