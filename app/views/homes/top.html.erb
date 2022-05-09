@@ -12,9 +12,5 @@
   <p>you can share and exchange  your opinions , inpressions , and emotions</p>
   <p> about various books!</p>
 
-<div>
-  <%= link_to "Log in", new_user_session_path %>
-</div>
-<div>
-  <%= link_to "Sign up", new_user_registration_path %>
-</div>
+  <%= link_to 'Log in', new_user_session_path, class: "btn btn-info" %>
+  <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-success" %>
