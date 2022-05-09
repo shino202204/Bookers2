@@ -1,4 +1,4 @@
-<div class="col-md-4">
+<div class="col-md-3">
 <% if book.errors.any? %>
   <%= book.errors.count %> errors prohibited this book from being saved:
   <ul>
@@ -24,7 +24,7 @@
     </tbody>
   </table>
   <% if user == current_user %>
-    <i class="fa-solid fa-user-gear"></i>
+    <i class="fas fa-user-cog"></i>
     <%= link_to "編集アイコン", edit_user_path(user.id) %>
   <% else %>
     <%= link_to "編集アイコン", user_path(current_user.id) %>
