@@ -9,7 +9,7 @@
 
 <h2>Book detail</h2>
   <p>
-    <%= image_tag @book_detail.user.get_image(100,100) %>
+    <%= link_to image_tag(@book_detail.user.get_image(100,100)), user_path(@book_detail.user.id) %>
     <%= link_to @book_detail.user.name, user_path(@book_detail.user.id) %>
   </p>
   <%= @book_detail.title %>
