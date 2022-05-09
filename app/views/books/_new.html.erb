@@ -24,12 +24,15 @@
       <td><%= user.introduction %></td>
     </tbody>
   </table>
-  <% if user == current_user %>
-    <i class="fas fa-user-cog"></i>
-    <%= link_to "編集アイコン", edit_user_path(user.id) %>
-  <% else %>
-    <%= link_to "編集アイコン", user_path(current_user.id) %>
-  <% end %>
+  <!--< if user == current_user %>-->
+    <%= link_to edit_user_path(user.id), class: "btn btn-outline-secondary", method: :get do %>
+      <i class="fas fa-user-cog"></i>
+    <% end %>
+  <!--< else %>-->
+    <!--<= link_to user_path(current_user.id), class: "btn btn-outline-secondary", method: :get do %>-->
+      <!--<i class="fas fa-user-cog"></i>-->
+    <!--< end %>-->
+  <!--< end %>-->
 
 <h2>New book</h2>
 <%= form_with model: book, url: '/books', method: :post do |f| %>
