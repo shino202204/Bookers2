@@ -24,6 +24,7 @@
     </tbody>
   </table>
   <% if user == current_user %>
+    <i class="fa-solid fa-user-gear"></i>
     <%= link_to "編集アイコン", edit_user_path(user.id) %>
   <% else %>
     <%= link_to "編集アイコン", user_path(current_user.id) %>
@@ -40,7 +41,7 @@
     <%= f.text_area :body %>
   </dvi>
   <div class="actions">
-    <%= f.submit 'Create Book' %>
+    <%= f.submit 'Create Book', class: "btn btn-success"%>
   </div>
 <% end %>
 </div>
