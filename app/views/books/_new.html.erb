@@ -11,7 +11,7 @@
 
   <h2>User info</h2>
     <span><%= image_tag user.get_image(100,100) %></span>
-    <table>
+    <table class="table">
       <thead>
         <tr>
           <th>name</th>
@@ -24,11 +24,13 @@
         <td><%= user.introduction %></td>
       </tbody>
     </table>
-      <%= link_to edit_user_path(user.id), class: "btn btn-outline-secondary", method: :get do %>
-        <i class="fas fa-user-cog"></i>
+    <div class="row">
+      <%= link_to edit_user_path(user.id), class: "btn btn-outline-secondary btn-block edit_user_9170", method: :get do %>
+      <i class="fas fa-user-cog"></i>
       <% end %>
+    </div>
 
-  <h2>New book</h2>
+  <h2 class="mt-3">New book</h2>
   <%= form_with model: book, url: '/books', method: :post do |f| %>
     <div class="field">
       <label>Title</label>
