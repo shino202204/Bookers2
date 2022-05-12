@@ -1,24 +1,9 @@
-# README
+# 課題：アプリケーションを作成してみよう：応用編
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+アプリケーションを完成させよう2
 
-Things you may want to cover:
+## コメント
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+中原 紫乃です。
+上記課題を提出させていただきます。
+ご確認の程よろしくお願いいたします。
